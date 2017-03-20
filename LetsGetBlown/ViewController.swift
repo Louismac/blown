@@ -11,19 +11,17 @@ import QuartzCore
 import CoreImage
 
 extension UIImage {
-    func pixelData(cgImage:CGImage,ctx:CGContext, pixelData:inout [UInt8]) {
-        
-        ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-    }
-}
-
-extension UIImage {
     func crop( rect: CGRect, ciIm:CIImage, ctx:CIContext) -> UIImage? {
         
         if let cropped = ctx.createCGImage(ciIm, from: rect) {
             return UIImage(cgImage: cropped);
         }
         return nil;
+    }
+    
+    func pixelData(cgImage:CGImage,ctx:CGContext, pixelData:inout [UInt8]) {
+        
+        ctx.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
     }
 }
 
@@ -32,7 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pinView: UIView!
     var pins = [[Pin]]()
     var pinViews = [[PinView]]()
-    var withinPin = 2;
+    var attractors = [Attractor]()
+    let withinPin = 2;
     let pinsX = 15;
     let pinsY = 21;
     var pinW:CGFloat {
@@ -68,7 +67,7 @@ class ViewController: UIViewController {
     let overlapW:CGFloat = 0.96
     let overlapH:CGFloat = 0.96
     var firstPass = true;
-    var hasLaidOutSubViews=false;
+    var hasLaidOutSubViews = false;
     var pixels = false;
 
     @IBAction func modePressed(_ sender: Any) {
@@ -82,8 +81,15 @@ class ViewController: UIViewController {
         
         updateMode();
         let link = CADisplayLink(target: self, selector: #selector(ViewController.update));
-        link.add(to:.current,forMode:.defaultRunLoopMode)
+        link.add(to:.current,forMode:.defaultRunLoopMode);
+        
+    }
     
+    func newAttractor() {
+        let a = Attractor();
+        a.pt = CGPoint(x: pinView.frame.size.width/2, y: pinView.frame.size.height);
+        a.vel = CGPoint(x:(rand()*20)-10,y:(rand()*10)-10);
+        attractors.append(a);
     }
     
     override func viewDidLayoutSubviews() {
@@ -97,6 +103,7 @@ class ViewController: UIViewController {
             centre.y = pinView.center.y;
             pinView.center = centre;
             hasLaidOutSubViews = true;
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.newAttractor), userInfo: nil, repeats: true);
         }
     }
     
@@ -158,6 +165,13 @@ class ViewController: UIViewController {
                         height:pinH*(2.0-overlapH));
         return fr;
     }
+    
+    func anchorPointFor(pinView:PinView) -> CGPoint {
+        let anchor = pinView.layer.anchorPoint;
+        let anchorX = (anchor.x*pinView.frame.size.width)+pinView.frame.origin.x;
+        let anchorY = (anchor.y*pinView.frame.size.height)+pinView.frame.origin.y;
+        return CGPoint(x: anchorX, y: anchorY);
+    }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for i in 0...pinsX-1 {
@@ -165,13 +179,9 @@ class ViewController: UIViewController {
                 let pinView = pinViews[i][j];
                 for touch in touches {
                     let touchLocation = touch.location(in: self.pinView)
-                    let pinViewFrame = self.pinView.convert(pinView.frame, from: pinView.superview)
-                    if pinViewFrame.contains(touchLocation) {
-                        let anchor = pinView.layer.anchorPoint;
-                        let anchorX = (anchor.x*pinView.frame.size.width)+pinView.frame.origin.x;
-                        let anchorY = (anchor.y*pinView.frame.size.height)+pinView.frame.origin.y;
+                    if pinView.frame.contains(touchLocation) {
                         let pin = pins[i][j];
-                        pin.alignWithTouchFromAnchor(touch:touchLocation,anchor:CGPoint(x: anchorX, y: anchorY));
+                        pin.alignWithTouchFromAnchor(touch:touchLocation,anchor:anchorPointFor(pinView:pinView));
                         return;
                     }
                 }
@@ -179,16 +189,61 @@ class ViewController: UIViewController {
         }
     }
     
-    func update() {
+    func updatePinsFromAttractors() {
         for i in 0...pinsX-1 {
             for j in 0...pinsY-1 {
+                let pinView = pinViews[i][j];
+                for attractor in attractors {
+                    if pinView.frame.contains(attractor.pt) {
+                        let pin = pins[i][j];
+                        pin.alignWithTouchFromAnchor(touch:attractor.pt,anchor:anchorPointFor(pinView:pinView));
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateAttractors() {
+        var toRemove = [Int]();
+        for (index, value) in attractors.enumerated() {
+            value.updatePos();
+            if doRemove(attractor:value) {
+                toRemove.append(index);
+            }
+        }
+        toRemove.forEach({attractors.remove(at:$0)});
+        updatePinsFromAttractors();
+    }
+    
+    func doRemove(attractor:Attractor) -> Bool {
+        
+        if !pinView.frame.contains(attractor.pt) {
+            return true;
+        }
+        
+        if attractor.hasStopped() {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    func update() {
+        
+        updateAttractors();
+        
+        for i in 0...pinsX-1 {
+            for j in 0...pinsY-1 {
+                
                 let pin = pins[i][j];
                 if pin.theta<0 || pin.theta>0 || firstPass {
                     pin.increment();
                     pinViews[i][j].setNeedsDisplay();
                 }
+                
             }
         }
+        
         firstPass=false;
 
     }
@@ -284,9 +339,6 @@ class ViewController: UIViewController {
                             let pinY = Int(floor(Double(j/withinPin)));
                             let withinPinX = i%withinPin;
                             let withinPinY = j%withinPin;
-                            //print(i,j);
-                            //print("pinX \(pinX) pinY \(pinY) withinPinX \(withinPinX) withinPinY \(withinPinY)");
-                            //print(r,g,b,a);
                             self.pins[pinX][pinY].colors![withinPinX][withinPinY] = UIColor(red: r, green: g, blue: b, alpha: a)
                         }
                     }

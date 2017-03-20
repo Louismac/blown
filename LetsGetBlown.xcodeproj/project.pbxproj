@@ -21,6 +21,7 @@
 		B07DACFE1E7C66BD006415DC /* IMG_2206.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACFD1E7C66BD006415DC /* IMG_2206.JPG */; };
 		B07DAD001E7C6CF4006415DC /* IMG_2636.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACFF1E7C6CF4006415DC /* IMG_2636.JPG */; };
 		B08CDBB81E7D642300624612 /* iPhone_7.png in Resources */ = {isa = PBXBuildFile; fileRef = B08CDBB71E7D642300624612 /* iPhone_7.png */; };
+		B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB8F661E80175B00C80827 /* Attractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B07DACFD1E7C66BD006415DC /* IMG_2206.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2206.JPG; sourceTree = "<group>"; };
 		B07DACFF1E7C6CF4006415DC /* IMG_2636.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2636.JPG; sourceTree = "<group>"; };
 		B08CDBB71E7D642300624612 /* iPhone_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone_7.png; sourceTree = "<group>"; };
+		B0FB8F661E80175B00C80827 /* Attractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				B0579F261E7AEA0E00DF824A /* AppDelegate.swift */,
 				B0579F281E7AEA0E00DF824A /* ViewController.swift */,
+				B0FB8F661E80175B00C80827 /* Attractor.swift */,
 				B0579F541E7AEA2600DF824A /* Pin.swift */,
 				B0579F561E7AF00600DF824A /* PinView.swift */,
 				B0579F2A1E7AEA0E00DF824A /* Main.storyboard */,
@@ -289,6 +292,7 @@
 				B0579F551E7AEA2600DF824A /* Pin.swift in Sources */,
 				B0579F291E7AEA0E00DF824A /* ViewController.swift in Sources */,
 				B0579F571E7AF00600DF824A /* PinView.swift in Sources */,
+				B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */,
 				B0579F271E7AEA0E00DF824A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
