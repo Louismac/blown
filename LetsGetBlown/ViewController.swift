@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pinView: UIView!
     var pins = [[Pin]]()
     var pinViews = [[PinView]]()
-    var attractors = [Attractor]()
+    var attractors = Set<Attractor>()
     let withinPin = 2;
     let pinsX = 15;
     let pinsY = 21;
@@ -66,15 +66,13 @@ class ViewController: UIViewController {
     }
     let overlapW:CGFloat = 0.96
     let overlapH:CGFloat = 0.96
+    let kBlowVelocity:Float = 14;
     var firstPass = true;
     var hasLaidOutSubViews = false;
     var pixels = false;
     var audioDetector:AudioDetector?;
-
-    @IBAction func modePressed(_ sender: Any) {
-        pixels = !pixels;
-        updateMode();
-    }
+    
+    // MARK:Setup
     
     override func viewDidLoad() {
         
@@ -87,24 +85,6 @@ class ViewController: UIViewController {
         audioDetector = AudioDetector();
         audioDetector?.delegate=self;
         
-    }
-    
-    func newAttractor(vel:Double) {
-        DispatchQueue.main.async {
-            let a = Attractor();
-            a.pt = CGPoint(x: self.pinView.frame.size.width/2, y: self.pinView.frame.size.height);
-            a.vel = CGPoint(x:(self.rand()*vel*2)-vel,y:(self.rand()*vel)-(vel*2));
-            self.attractors.append(a);
-        }
-    }
-    
-    func velFrom(vol:Float) -> Double {
-        return Double(vol+14);
-    }
-    
-    func overThresholdWith(vol:Float) {
-        newAttractor(vel:velFrom(vol: vol));
-        newAttractor(vel:velFrom(vol: vol));
     }
     
     override func viewDidLayoutSubviews() {
@@ -124,10 +104,6 @@ class ViewController: UIViewController {
     func updateMode() {
         updateModel();
         pixels ? getColors():cropImage();
-    }
-    
-    func rand() -> Double {
-        return Double(Float(arc4random()) / Float(UINT32_MAX))
     }
     
     func updateModel() {
@@ -172,75 +148,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func pinRectFor(i:Int, andJ j:Int) -> CGRect {
-        let fr = CGRect(x:floor(CGFloat(i)*pinW-((pinW*(1-overlapW))/2)),
-                        y:floor(CGFloat(j)*pinH-((pinH*(1-overlapH))/2)),
-                        width:pinW*(2.0-overlapW),
-                        height:pinH*(2.0-overlapH));
-        return fr;
-    }
-    
-    func anchorPointFor(pinView:PinView) -> CGPoint {
-        let anchor = pinView.layer.anchorPoint;
-        let anchorX = (anchor.x*pinView.frame.size.width)+pinView.frame.origin.x;
-        let anchorY = (anchor.y*pinView.frame.size.height)+pinView.frame.origin.y;
-        return CGPoint(x: anchorX, y: anchorY);
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for i in 0...pinsX-1 {
-            for j in 0...pinsY-1 {
-                let pinView = pinViews[i][j];
-                for touch in touches {
-                    let touchLocation = touch.location(in: self.pinView)
-                    if pinView.frame.contains(touchLocation) {
-                        let pin = pins[i][j];
-                        pin.alignWithTouchFromAnchor(touch:touchLocation,anchor:anchorPointFor(pinView:pinView));
-                        return;
-                    }
-                }
-            }
-        }
-    }
-    
-    func updatePinsFromAttractors() {
-        for i in 0...pinsX-1 {
-            for j in 0...pinsY-1 {
-                let pinView = pinViews[i][j];
-                for attractor in attractors {
-                    if pinView.frame.contains(attractor.pt) {
-                        let pin = pins[i][j];
-                        pin.alignWithTouchFromAnchor(touch:attractor.pt,anchor:anchorPointFor(pinView:pinView));
-                    }
-                }
-            }
-        }
-    }
-    
-    func updateAttractors() {
-        var toRemove = [Int]();
-        for (index, value) in attractors.enumerated() {
-            value.updatePos();
-            if doRemove(attractor:value) {
-                toRemove.append(index);
-            }
-        }
-        toRemove.forEach({attractors.remove(at:$0)});
-        updatePinsFromAttractors();
-    }
-    
-    func doRemove(attractor:Attractor) -> Bool {
-        
-        if !view.frame.contains(attractor.pt) {
-            return true;
-        }
-        
-        if attractor.hasStopped() {
-            return true;
-        }
-        
-        return false;
-    }
+    // MARK:Main Loop
     
     func update() {
         
@@ -259,8 +167,92 @@ class ViewController: UIViewController {
         }
         
         firstPass=false;
-
+        
     }
+    
+    // MARK:Interaction Handlers
+    
+    @IBAction func modePressed(_ sender: Any) {
+        pixels = !pixels;
+        updateMode();
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for i in 0...pinsX-1 {
+            for j in 0...pinsY-1 {
+                let pinView = pinViews[i][j];
+                for touch in touches {
+                    let touchLocation = touch.location(in: self.pinView)
+                    if pinView.frame.contains(touchLocation) {
+                        let pin = pins[i][j];
+                        pin.alignWithTouchFromAnchor(touch:touchLocation,anchor:anchorPointFor(pinView:pinView));
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: Attractors
+    
+    func updatePinsFromAttractors() {
+        for i in 0...pinsX-1 {
+            for j in 0...pinsY-1 {
+                let pinView = pinViews[i][j];
+                for attractor in attractors {
+                    if pinView.frame.contains(attractor.pt) {
+                        let pin = pins[i][j];
+                        pin.alignWithTouchFromAnchor(touch:attractor.pt,anchor:anchorPointFor(pinView:pinView));
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateAttractors() {
+        var toRemove = [Attractor]();
+        for attractor in attractors {
+            attractor.updatePos();
+            if doRemove(attractor:attractor) {
+                toRemove.append(attractor);
+            }
+        }
+        attractors = attractors.subtracting(toRemove);
+        updatePinsFromAttractors();
+    }
+    
+    func doRemove(attractor:Attractor) -> Bool {
+        
+        if !view.frame.contains(attractor.pt) {
+            return true;
+        }
+        
+        if attractor.hasStopped() {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    func newAttractor(vel:Double) {
+        DispatchQueue.main.async {
+            let a = Attractor();
+            a.pt = CGPoint(x: self.pinView.frame.size.width/2, y: self.pinView.frame.size.height);
+            a.vel = CGPoint(x:(self.rand()*vel*2)-vel,y:(self.rand()*vel)-(vel*2));
+            self.attractors.insert(a);
+        }
+    }
+    
+    func velFrom(vol:Float) -> Double {
+        return Double(vol+kBlowVelocity);
+    }
+    
+    func overThresholdWith(vol:Float) {
+        newAttractor(vel:velFrom(vol: vol));
+        newAttractor(vel:velFrom(vol: vol));
+    }
+    
+    // MARK: Image Processing
     
     func cropImage() {
         if let im = UIImage(named:"IMG_2636.JPG") {
@@ -359,6 +351,27 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // MARK: Helper Methods
+    
+    func rand() -> Double {
+        return Double(Float(arc4random()) / Float(UINT32_MAX))
+    }
+    
+    func pinRectFor(i:Int, andJ j:Int) -> CGRect {
+        let fr = CGRect(x:floor(CGFloat(i)*pinW-((pinW*(1-overlapW))/2)),
+                        y:floor(CGFloat(j)*pinH-((pinH*(1-overlapH))/2)),
+                        width:pinW*(2.0-overlapW),
+                        height:pinH*(2.0-overlapH));
+        return fr;
+    }
+    
+    func anchorPointFor(pinView:PinView) -> CGPoint {
+        let anchor = pinView.layer.anchorPoint;
+        let anchorX = (anchor.x*pinView.frame.size.width)+pinView.frame.origin.x;
+        let anchorY = (anchor.y*pinView.frame.size.height)+pinView.frame.origin.y;
+        return CGPoint(x: anchorX, y: anchorY);
     }
 
     override func didReceiveMemoryWarning() {

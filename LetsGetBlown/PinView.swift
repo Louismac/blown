@@ -9,14 +9,6 @@
 import Foundation
 import UIKit
 
-extension Double {
-    var degreesToRadians: CGFloat { return CGFloat(self) * .pi / 180 }
-}
-extension FloatingPoint {
-    var degreesToRadians: Self { return self * .pi / 180 }
-    var radiansToDegrees: Self { return self * 180 / .pi }
-}
-
 class PinView:UIView {
     
     var pin:Pin=Pin();
@@ -29,7 +21,7 @@ class PinView:UIView {
         super.init(frame: frame);
         imV = UIImageView(frame: bounds);
         addSubview(imV);
-        self.layer.anchorPoint = CGPoint(x:0.5,y:0.1);
+        self.layer.anchorPoint = CGPoint(x:0.5,y:0.2);
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,12 +54,7 @@ class PinView:UIView {
                     ctx!.fill(rect);
                 }
             }
-        } 
-//        let rect = CGRect(x:0, y:0, width:frame.size.width, height:frame.size.height);
-//        ctx!.setStrokeColor(pin.colors![0][0].cgColor);
-//        ctx!.setLineWidth(2.0);
-//        ctx!.stroke(rect);
-//        
+        }
     }
     
 }

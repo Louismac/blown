@@ -11,7 +11,7 @@ import UIKit
 
 typealias Velocity=CGPoint;
 
-class Attractor {
+class Attractor:NSObject {
     
     var pt = CGPoint.zero;
     var vel:Velocity = CGPoint.zero;

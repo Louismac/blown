@@ -16,7 +16,8 @@ class AudioDetector:NSObject {
     var recorder: AVAudioRecorder!
     var levelTimer = Timer()
     var lowPassResults: Double = 0.0
-    var delegate:ViewController?;
+    var delegate:ViewController?
+    let kUpdateInterval = 0.3;
     
     func levelTimerCallback() {
         recorder.updateMeters()
@@ -67,6 +68,6 @@ class AudioDetector:NSObject {
         
         recorder.record()
         
-        self.levelTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self,selector:#selector(self.levelTimerCallback), userInfo: nil, repeats: true)
+        self.levelTimer = Timer.scheduledTimer(timeInterval: kUpdateInterval, target: self,selector:#selector(self.levelTimerCallback), userInfo: nil, repeats: true)
     }
 }
