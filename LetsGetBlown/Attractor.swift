@@ -15,7 +15,7 @@ class Attractor {
     
     var pt = CGPoint.zero;
     var vel:Velocity = CGPoint.zero;
-    var g:CGFloat = 0.01;
+    var g:CGFloat = 0.1;
     
     func updatePos() {
         pt.x += vel.x;

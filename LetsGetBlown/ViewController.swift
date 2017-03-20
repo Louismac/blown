@@ -69,6 +69,7 @@ class ViewController: UIViewController {
     var firstPass = true;
     var hasLaidOutSubViews = false;
     var pixels = false;
+    var audioDetector:AudioDetector?;
 
     @IBAction func modePressed(_ sender: Any) {
         pixels = !pixels;
@@ -83,13 +84,27 @@ class ViewController: UIViewController {
         let link = CADisplayLink(target: self, selector: #selector(ViewController.update));
         link.add(to:.current,forMode:.defaultRunLoopMode);
         
+        audioDetector = AudioDetector();
+        audioDetector?.delegate=self;
+        
     }
     
-    func newAttractor() {
-        let a = Attractor();
-        a.pt = CGPoint(x: pinView.frame.size.width/2, y: pinView.frame.size.height);
-        a.vel = CGPoint(x:(rand()*20)-10,y:(rand()*10)-10);
-        attractors.append(a);
+    func newAttractor(vel:Double) {
+        DispatchQueue.main.async {
+            let a = Attractor();
+            a.pt = CGPoint(x: self.pinView.frame.size.width/2, y: self.pinView.frame.size.height);
+            a.vel = CGPoint(x:(self.rand()*vel*2)-vel,y:(self.rand()*vel)-(vel*2));
+            self.attractors.append(a);
+        }
+    }
+    
+    func velFrom(vol:Float) -> Double {
+        return Double(vol+14);
+    }
+    
+    func overThresholdWith(vol:Float) {
+        newAttractor(vel:velFrom(vol: vol));
+        newAttractor(vel:velFrom(vol: vol));
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,7 +118,6 @@ class ViewController: UIViewController {
             centre.y = pinView.center.y;
             pinView.center = centre;
             hasLaidOutSubViews = true;
-            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.newAttractor), userInfo: nil, repeats: true);
         }
     }
     
@@ -217,7 +231,7 @@ class ViewController: UIViewController {
     
     func doRemove(attractor:Attractor) -> Bool {
         
-        if !pinView.frame.contains(attractor.pt) {
+        if !view.frame.contains(attractor.pt) {
             return true;
         }
         

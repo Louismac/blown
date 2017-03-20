@@ -19,7 +19,7 @@ class Pin {
     let L = 1.0
     let d = 0.02
     let dt = 0.01
-    let damp = 1.0;
+    let damp = 1.4;
     var theta:Double = 0.0
     var thetaDot:Double = 0.0
     var colors:[[UIColor]]?;
