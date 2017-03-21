@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0579F221E7AEA0E00DF824A"
-               BuildableName = "LetsGetBlown.app"
-               BlueprintName = "LetsGetBlown"
-               ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+               BuildableName = "Blown.app"
+               BlueprintName = "Blown"
+               ReferencedContainer = "container:Blown.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0579F361E7AEA0E00DF824A"
-               BuildableName = "LetsGetBlownTests.xctest"
-               BlueprintName = "LetsGetBlownTests"
-               ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+               BuildableName = "BlownTests.xctest"
+               BlueprintName = "BlownTests"
+               ReferencedContainer = "container:Blown.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0579F411E7AEA0E00DF824A"
-               BuildableName = "LetsGetBlownUITests.xctest"
-               BlueprintName = "LetsGetBlownUITests"
-               ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+               BuildableName = "BlownUITests.xctest"
+               BlueprintName = "BlownUITests"
+               ReferencedContainer = "container:Blown.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0579F221E7AEA0E00DF824A"
-            BuildableName = "LetsGetBlown.app"
-            BlueprintName = "LetsGetBlown"
-            ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+            BuildableName = "Blown.app"
+            BlueprintName = "Blown"
+            ReferencedContainer = "container:Blown.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0579F221E7AEA0E00DF824A"
-            BuildableName = "LetsGetBlown.app"
-            BlueprintName = "LetsGetBlown"
-            ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+            BuildableName = "Blown.app"
+            BlueprintName = "Blown"
+            ReferencedContainer = "container:Blown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B0579F221E7AEA0E00DF824A"
-            BuildableName = "LetsGetBlown.app"
-            BlueprintName = "LetsGetBlown"
-            ReferencedContainer = "container:LetsGetBlown.xcodeproj">
+            BuildableName = "Blown.app"
+            BlueprintName = "Blown"
+            ReferencedContainer = "container:Blown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
