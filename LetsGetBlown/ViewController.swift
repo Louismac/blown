@@ -43,6 +43,8 @@ typealias ImageProperties = (hScale:CGFloat,
                             wScale:CGFloat,
                             vH:CGFloat,
                             vW:CGFloat,
+                            xOffset:CGFloat,
+                            yOffset:CGFloat,
                             cgContext:CGContext,
                             im:UIImage
                             );
@@ -51,6 +53,7 @@ typealias ImageProperties = (hScale:CGFloat,
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var pinView: UIView!
     @IBOutlet weak var modeButton: RoundedGreenButton!
     @IBOutlet weak var selectPhotoButton: RoundedGreenButton!
@@ -102,6 +105,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var pixelsComplete = false;
     var hasLaidOutSubViews = false;
     var pixels = false;
+    let blownGreen = UIColor(red: 20/255, green: 191/255, blue: 121/255, alpha: 1.0);
     
     var audioDetector:AudioDetector?;
     let imagePicker = UIImagePickerController();
@@ -148,8 +152,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             modeButton.setEnabled(enabled: false);
             modeButton.spinner.isHidden = true;
             
+            instructionLabel.backgroundColor = blownGreen;
+
             newPhotoSelected();
+            instructionLabel.isHidden = true;
+            pinView.layer.borderWidth = 0.0;
             
+        }
+    }
+    
+    func clear() {
+        for i in 0...pinsX-1 {
+            for j in 0...pinsY-1 {
+                
+                pins[i][j].image = UIImage();
+                pins[i][j].setDefaultColors(w: withinPin, h: withinPin);
+                pinViews[i][j].pixels = pixels;
+                
+            }
         }
     }
     
@@ -160,11 +180,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pixelsComplete = false;
         pinsComplete = false;
         modeButton.setEnabled(enabled: false);
+        instructionLabel.isHidden = false;
+        pinView.layer.borderColor = blownGreen.cgColor;
+        pinView.layer.borderWidth = 5.0;
+        pinView.layer.cornerRadius = 10;
         
         showProcessingSpinner();
         
         queue.async {
             
+            self.clear();
+
             self.setPins(fromImage: self.image!)
             
             DispatchQueue.main.async {
@@ -308,7 +334,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: - Interaction Handlers
     
-    
     @IBAction func loadImageButtonPressed(sender: UIButton) {
         
         imagePicker.allowsEditing = false
@@ -431,7 +456,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if var pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if pickedImage.imageOrientation==UIImageOrientation.left ||
+                pickedImage.imageOrientation==UIImageOrientation.right ||
+                pickedImage.imageOrientation==UIImageOrientation.down {
+                    UIGraphicsBeginImageContext(pickedImage.size);
+                    pickedImage.draw(at: CGPoint(x:0,y:0));
+                    pickedImage=UIGraphicsGetImageFromCurrentImageContext()!;
+                    UIGraphicsEndImageContext();
+            }
             image = pickedImage;
             newPhotoSelected()
         }
@@ -539,13 +572,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imH = im.size.height;
         let vH = pinView.frame.size.height;
         let vW = pinView.frame.size.width;
-        let hScale = imH/vH;
-        let wScale = imW/vW;
+        
+        var hScale = imH/vH;
+        var wScale = imW/vW;
+        if hScale < wScale {
+            hScale = wScale;
+        } else {
+            wScale = hScale;
+        }
+        
+        var yDelta = imH - (vH*hScale);
+        if yDelta != 0 {
+            yDelta-=(pinH*hScale);
+        }
+        
+        var xDelta = imW - (vW*wScale);
+        if xDelta != 0 {
+            xDelta-=pinW;
+        }
         
         let size = CGSize(width:pinW, height:pinH);
-        let dataSize = size.width * size.height * 4
-        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let dataSize = size.width * size.height * 4;
+        var pixelData = [UInt8](repeating: 0, count: Int(dataSize));
+        let colorSpace = CGColorSpaceCreateDeviceRGB();
         if let cgContext = CGContext(data: &pixelData,
                                   width: Int(size.width),
                                   height: Int(size.height),
@@ -558,6 +607,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                    vW:vW,
                                    hScale:hScale,
                                    wScale:wScale,
+                                   xOffset:xDelta/2.0,
+                                   yOffset:yDelta/2.0,
                                    cgContext:cgContext,
                                    im:im);
         }
@@ -570,8 +621,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func scaledRectFor(frame fr:CGRect, andImageProperties prop:ImageProperties) -> CGRect {
         
         let mirrorY = (prop.vH/2) - (fr.origin.y - (prop.vH/2)) - pinH;
-        let scaleFr = CGRect(x:fr.origin.x*prop.wScale,
-                             y:(mirrorY*prop.hScale),
+        let scaleFr = CGRect(x:(fr.origin.x*prop.wScale)+prop.xOffset,
+                             y:(mirrorY*prop.hScale)+prop.yOffset,
                              width:fr.size.width*prop.wScale,
                              height:fr.size.height*prop.hScale
         );

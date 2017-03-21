@@ -23,8 +23,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-Tj-yAQ">
-                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="68" width="375" height="534"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QML-wb-N3J" customClass="RoundedGreenButton" customModule="LetsGetBlown" customModuleProvider="target">
                                 <rect key="frame" x="38" y="30" width="130" height="30"/>
@@ -49,22 +49,33 @@
                                     <action selector="loadImageButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znR-Dv-Ai2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blow into the Mic or Swipe " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rt-L8-6Ke">
+                                <rect key="frame" x="8" y="610" width="359" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5Rt-L8-6Ke" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8F1-zt-em5"/>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="top" secondItem="QML-wb-N3J" secondAttribute="bottom" constant="8" id="9zT-sY-g4K"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="width" secondItem="QML-wb-N3J" secondAttribute="width" id="DiS-an-M79"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="height" secondItem="QML-wb-N3J" secondAttribute="height" id="GtN-vJ-VJj"/>
                             <constraint firstAttribute="trailing" secondItem="xUB-Tj-yAQ" secondAttribute="trailing" id="K53-m8-0LT"/>
+                            <constraint firstAttribute="trailing" secondItem="5Rt-L8-6Ke" secondAttribute="trailing" constant="8" id="T59-BJ-dZ1"/>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZD9-cu-mcP"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="jT5-uT-DyB"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" id="vNB-D5-AcG"/>
+                            <constraint firstItem="5Rt-L8-6Ke" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="8" id="nlx-L5-n2h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Rt-L8-6Ke" secondAttribute="bottom" constant="8" id="uJl-BM-8si"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="65" id="vNB-D5-AcG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dps-ou-DvE" secondAttribute="trailing" constant="22" id="vj6-z6-bFi"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="wfC-11-Tdb"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="centerY" secondItem="QML-wb-N3J" secondAttribute="centerY" id="wj7-yH-bzk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="instructionLabel" destination="5Rt-L8-6Ke" id="PmA-ZY-mtR"/>
                         <outlet property="modeButton" destination="QML-wb-N3J" id="cs2-Ac-25i"/>
                         <outlet property="pinView" destination="xUB-Tj-yAQ" id="87g-YY-THy"/>
                         <outlet property="selectPhotoButton" destination="Dps-ou-DvE" id="Nmu-54-wW4"/>
@@ -72,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="71"/>
+            <point key="canvasLocation" x="189.59999999999999" y="70.614692653673174"/>
         </scene>
     </scenes>
 </document>

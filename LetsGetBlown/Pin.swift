@@ -24,13 +24,15 @@ class Pin {
     
     func setDefaultColors(w:Int,h:Int) {
         
+        colors.removeAll();
+        
         for _ in 0...w-1 {
             
             var arr = [UIColor]();
             
             for _ in 0...h-1 {
                 
-                arr.append(UIColor.white);
+                arr.append(UIColor.black);
                 
             }
             

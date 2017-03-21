@@ -23,7 +23,9 @@ class PinView:UIView {
         
         super.init(frame: frame);
         imV = UIImageView(frame: bounds);
+        imV.backgroundColor=UIColor.black;
         addSubview(imV);
+        backgroundColor=UIColor.black;
         self.layer.anchorPoint = CGPoint(x:anchorX,y:anchorY);
         
     }
