@@ -37,18 +37,6 @@ extension UIImage {
     }
 }
 
-// MARK: - Types
-
-typealias ImageProperties = (hScale:CGFloat,
-                            wScale:CGFloat,
-                            vH:CGFloat,
-                            vW:CGFloat,
-                            xOffset:CGFloat,
-                            yOffset:CGFloat,
-                            cgContext:CGContext,
-                            im:UIImage
-                            );
-
 //MARK: - Main Class
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -96,9 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return floor(CGFloat(pinH/CGFloat(withinPin)))
         }
     }
-    
-    let overlapW:CGFloat = 0.96
-    let overlapH:CGFloat = 0.96
+
     let blowVelocity:Float = 14;
     var firstPass = true;
     var pinsComplete = false;
@@ -108,6 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let blownGreen = UIColor(red: 20/255, green: 191/255, blue: 121/255, alpha: 1.0);
     
     var audioDetector:AudioDetector?;
+    var imageTools:ImageTools!;
     let imagePicker = UIImagePickerController();
     var image:UIImage? = UIImage(named: "blowninstructions");
     let queue = DispatchQueue(label: "com.blown.photoqueue");
@@ -117,8 +104,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        initModel();
         
         let link = CADisplayLink(target: self, selector: #selector(ViewController.update));
         link.add(to:.current,forMode:.defaultRunLoopMode);
@@ -148,7 +133,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             var centre = view.center;
             centre.y = pinView.center.y;
             pinView.center = centre;
-            hasLaidOutSubViews = true;
+            
+            imageTools = ImageTools(pinW:pinW,pinH:pinH,pinFr:pinView.frame);
+            
+            initModel();
+            
             modeButton.setEnabled(enabled: false);
             modeButton.spinner.isHidden = true;
             
@@ -157,6 +146,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             instructionLabel.isHidden = true;
             pinView.layer.borderWidth = 0.0;
             
+            hasLaidOutSubViews = true;
+    
         }
     }
     
@@ -271,7 +262,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 pinArray.append(newPin);
                 newPin.setDefaultColors(w: withinPin, h: withinPin);
 
-                let fr = rectFor(pin:CGPoint(x:i,y:j));
+                let fr = imageTools.rectFor(pin:CGPoint(x:i,y:j));
                 let newPinView = PinView(frame:fr);
                 newPinView.pin = newPin;
                 newPinView.pixels = pixels;
@@ -359,7 +350,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     if pinView.frame.contains(touchLocation) {
                         
                         let pin = pins[i][j];
-                        pin.alignWith(touch:touchLocation,fromAnchor:anchorPointFor(pinView:pinView));
+                        pin.alignWith(touch:touchLocation,fromAnchor:imageTools.anchorPointFor(pinView:pinView));
                         
                         // Early exit
                         
@@ -386,7 +377,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     if pinView.frame.contains(attractor.pt) {
                         
                         let pin = pins[i][j];
-                        pin.alignWith(touch:attractor.pt,fromAnchor:anchorPointFor(pinView:pinView));
+                        pin.alignWith(touch:attractor.pt,fromAnchor:imageTools.anchorPointFor(pinView:pinView));
                     
                     }
                 }
@@ -478,7 +469,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func setPins(fromImage image:UIImage) {
         
-        if let imageProperties = propertiesFor(image:image) {
+        if let imageProperties = imageTools.propertiesFor(image:image) {
             
             let ciContext = CIContext(cgContext:imageProperties.cgContext,options:nil);
             
@@ -487,8 +478,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 for i in 0...pinsX-1 {
                     for j in 0...pinsY-1 {
                         
-                        let fr = rectFor(pin:CGPoint(x:i,y:j));
-                        let scaleFr = scaledRectFor(frame:fr, andImageProperties:imageProperties);
+                        let fr = imageTools.rectFor(pin:CGPoint(x:i,y:j));
+                        let scaleFr = imageTools.scaledRectFor(frame:fr, andImageProperties:imageProperties);
                         
                         if let cropped = imageProperties.im.crop(toRect:scaleFr,
                                                                  withCIImage:ciIm,
@@ -506,7 +497,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func setPixels(fromImage image:UIImage) {
         
-        if let imageProperties = propertiesFor(image:image) {
+        if let imageProperties = imageTools.propertiesFor(image:image) {
             
             let ciIM = CIImage(image:imageProperties.im);
             let ciContext = CIContext()
@@ -517,7 +508,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     let x = floor(CGFloat(i)*pixelW);
                     let y = floor(CGFloat(j)*pixelH);
                     let fr = CGRect(x:x , y: y, width: pixelW, height: pixelH);
-                    let scaleFr = scaledRectFor(frame:fr, andImageProperties:imageProperties);
+                    let scaleFr = imageTools.scaledRectFor(frame:fr, andImageProperties:imageProperties);
                     
                     let vec = CIVector(cgRect: scaleFr);
                     let filter = CIFilter(name: "CIAreaAverage");
@@ -564,101 +555,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: - Helper Methods
     
-    func propertiesFor(image im:UIImage) -> ImageProperties? {
+    func velFrom(vol:Float) -> Double {
         
-        let imW = im.size.width;
-        let imH = im.size.height;
-        let vH = pinView.frame.size.height;
-        let vW = pinView.frame.size.width;
-        
-        var hScale = imH/vH;
-        var wScale = imW/vW;
-        if hScale < wScale {
-            hScale = wScale;
-        } else {
-            wScale = hScale;
-        }
-        
-        var yDelta = imH - (vH*hScale);
-        if yDelta != 0 {
-            yDelta-=(pinH*hScale);
-        }
-        
-        var xDelta = imW - (vW*wScale);
-        if xDelta != 0 {
-            xDelta-=(pinW*wScale);
-        }
-        
-        let size = CGSize(width:pinW, height:pinH);
-        let dataSize = size.width * size.height * 4;
-        var pixelData = [UInt8](repeating: 0, count: Int(dataSize));
-        let colorSpace = CGColorSpaceCreateDeviceRGB();
-        if let cgContext = CGContext(data: &pixelData,
-                                  width: Int(size.width),
-                                  height: Int(size.height),
-                                  bitsPerComponent: 8,
-                                  bytesPerRow: 4 * Int(size.width),
-                                  space: colorSpace,
-                                  bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue) {
-        
-            return ImageProperties(vH:vH,
-                                   vW:vW,
-                                   hScale:hScale,
-                                   wScale:wScale,
-                                   xOffset:xDelta/2.0,
-                                   yOffset:yDelta/2.0,
-                                   cgContext:cgContext,
-                                   im:im);
-        }
-        
-        
-        return nil;
-        
-    }
-    
-    func scaledRectFor(frame fr:CGRect, andImageProperties prop:ImageProperties) -> CGRect {
-        
-        let mirrorY = (prop.vH/2) - (fr.origin.y - (prop.vH/2)) - pinH;
-        let scaleFr = CGRect(x:(fr.origin.x*prop.wScale)+prop.xOffset,
-                             y:(mirrorY*prop.hScale)+prop.yOffset,
-                             width:fr.size.width*prop.wScale,
-                             height:fr.size.height*prop.hScale
-        );
-        
-        return scaleFr;
+        return Double(vol+blowVelocity);
         
     }
     
     func rand() -> Double {
         
         return Double(Float(arc4random()) / Float(UINT32_MAX));
-        
-    }
-    
-    func rectFor(pin coordinate:CGPoint) -> CGRect {
-        
-        let fr = CGRect(x:floor(CGFloat(coordinate.x)*pinW-((pinW*(1-overlapW))/2)),
-                        y:floor(CGFloat(coordinate.y)*pinH-((pinH*(1-overlapH))/2)),
-                        width:pinW*(2.0-overlapW),
-                        height:pinH*(2.0-overlapH));
-        
-        return fr;
-        
-    }
-    
-    func anchorPointFor(pinView:PinView) -> CGPoint {
-        
-        let anchor = pinView.layer.anchorPoint;
-        let anchorX = (anchor.x*pinView.frame.size.width)+pinView.frame.origin.x;
-        let anchorY = (anchor.y*pinView.frame.size.height)+pinView.frame.origin.y;
-        
-        return CGPoint(x: anchorX, y: anchorY);
-        
-    }
-    
-    func velFrom(vol:Float) -> Double {
-        
-        return Double(vol+blowVelocity);
         
     }
     

@@ -18,16 +18,14 @@ class AudioDetector:NSObject {
     var lowPassResults:Double = 0.0
     var delegate:ViewController?
     let kUpdateInterval = 0.3;
-    let threshold:Float = -9;
+    let threshold:Float = -10;
     
     func levelTimerCallback() {
         
         recorder.updateMeters()
         
         if recorder.averagePower(forChannel: 0) > threshold{
-            
-            print(recorder.averagePower(forChannel: 0))
-            
+                        
             if let caller = delegate {
                 caller.overThresholdWith(vol:recorder.averagePower(forChannel: 0));
             }
