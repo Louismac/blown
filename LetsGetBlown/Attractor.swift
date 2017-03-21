@@ -18,39 +18,48 @@ class Attractor:NSObject {
     var g:CGFloat = 0.1;
     
     func updatePos() {
+        
         pt.x += vel.x;
         pt.y += vel.y;
+        
         if(vel.x<0) {
             vel.x+=g;
             if(vel.x>0) {
                 vel.x=0;
             }
         }
+        
         if(vel.x>0) {
             vel.x-=g;
             if(vel.x<0) {
                 vel.x=0;
             }
         }
+        
         if(vel.y<0) {
             vel.y+=g;
             if(vel.y>0) {
                 vel.y=0;
             }
         }
+        
         if(vel.y>0) {
             vel.y-=g;
             if(vel.y<0) {
                 vel.y=0;
             }
         }
+        
     }
     
     func hasStopped() -> Bool {
+        
         if (vel.x==0 && vel.y==0) {
             return true;
         }
+        
         return false;
+    
     }
     
 }

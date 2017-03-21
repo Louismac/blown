@@ -27,14 +27,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QML-wb-N3J">
-                                <rect key="frame" x="154" y="30" width="67" height="30"/>
+                                <rect key="frame" x="38" y="30" width="67" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6hg-72-tTK"/>
                                     <constraint firstAttribute="width" constant="67" id="ZLG-eZ-tIG"/>
                                 </constraints>
                                 <state key="normal" title="Mode"/>
                                 <connections>
-                                    <action selector="modePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iDb-lf-A99"/>
+                                    <action selector="modeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfL-1g-cI9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-ou-DvE">
+                                <rect key="frame" x="249" y="30" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S5Z-ri-yXG"/>
+                                    <constraint firstAttribute="width" constant="88" id="Tn5-Hh-Ggq"/>
+                                </constraints>
+                                <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="loadImageButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znR-Dv-Ai2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -42,10 +53,12 @@
                         <constraints>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="top" secondItem="QML-wb-N3J" secondAttribute="bottom" constant="8" id="9zT-sY-g4K"/>
                             <constraint firstAttribute="trailing" secondItem="xUB-Tj-yAQ" secondAttribute="trailing" id="K53-m8-0LT"/>
-                            <constraint firstItem="QML-wb-N3J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RQo-xI-8CQ"/>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZD9-cu-mcP"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="jT5-uT-DyB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" id="vNB-D5-AcG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dps-ou-DvE" secondAttribute="trailing" constant="22" id="vj6-z6-bFi"/>
+                            <constraint firstItem="QML-wb-N3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="wfC-11-Tdb"/>
+                            <constraint firstItem="Dps-ou-DvE" firstAttribute="centerY" secondItem="QML-wb-N3J" secondAttribute="centerY" id="wj7-yH-bzk"/>
                         </constraints>
                     </view>
                     <connections>

@@ -16,12 +16,16 @@ class PinView:UIView {
     var pixels=false;
     var ciIm:CIImage=CIImage();
     var srcRect:CGRect=CGRect.zero;
+    let anchorX = 0.5;
+    let anchorY = 0.1;
     
     override init(frame: CGRect) {
+        
         super.init(frame: frame);
         imV = UIImageView(frame: bounds);
         addSubview(imV);
-        self.layer.anchorPoint = CGPoint(x:0.5,y:0.2);
+        self.layer.anchorPoint = CGPoint(x:anchorX,y:anchorY);
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,10 +33,12 @@ class PinView:UIView {
     }
     
     func addShadow() {
+        
         layer.masksToBounds = false;
         layer.shadowOffset = CGSize(width:-1,height:1);
         layer.shadowRadius = 2;
         layer.shadowOpacity = 0.1;
+        
     }
     
     override func draw(_ rect: CGRect) {
@@ -40,18 +46,21 @@ class PinView:UIView {
         let angle = pin.theta
         let rotate = CGAffineTransform (rotationAngle:CGFloat(angle));
         self.transform = rotate;
-        if pixels {
-            let ctx = UIGraphicsGetCurrentContext()
-            let nRows = pin.colors!.count;
+        
+        if pixels, let ctx = UIGraphicsGetCurrentContext() {
+            
+            let nRows = pin.colors.count;
             let w = frame.size.width/CGFloat(nRows);
-            let nColumns = pin.colors![0].count;
+            let nColumns = pin.colors[0].count;
             let h = frame.size.height/CGFloat(nColumns);
             
             for i in 0...nRows-1 {
                 for j in 0...nColumns-1 {
+                    
                     let rect = CGRect(x:CGFloat(i)*w, y:CGFloat(j)*h, width:w, height:h);
-                    ctx!.setFillColor(pin.colors![i][j].cgColor);
-                    ctx!.fill(rect);
+                    ctx.setFillColor(pin.colors[i][j].cgColor);
+                    ctx.fill(rect);
+                    
                 }
             }
         }

@@ -15,59 +15,66 @@ class AudioDetector:NSObject {
     
     var recorder: AVAudioRecorder!
     var levelTimer = Timer()
-    var lowPassResults: Double = 0.0
+    var lowPassResults:Double = 0.0
     var delegate:ViewController?
     let kUpdateInterval = 0.3;
+    let threshold:Float = -9;
     
     func levelTimerCallback() {
+        
         recorder.updateMeters()
         
-        if recorder.averagePower(forChannel: 0) > -9 {
+        if recorder.averagePower(forChannel: 0) > threshold{
+            
             print(recorder.averagePower(forChannel: 0))
+            
             if let caller = delegate {
                 caller.overThresholdWith(vol:recorder.averagePower(forChannel: 0));
             }
+            
         }
+        
     }
     
     override init() {
         
         super.init();
         
-        let audioSession:AVAudioSession = AVAudioSession.sharedInstance()
-        do {
-            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        }catch {
-            print("not set");
-        }
-        do {
-            try audioSession.setActive(true)
-        }catch {
-            print("not set");
-        }
-    
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let str = documentsPath+"/record.caf";
-        let url = URL(fileURLWithPath: str);
-        let recordSettings: [String : AnyObject] = [
-            AVFormatIDKey:kAudioFormatLinearPCM as AnyObject,
-            AVSampleRateKey:44100.0 as AnyObject,
-            AVNumberOfChannelsKey:2 as AnyObject,
-            AVEncoderBitRateKey:12800 as AnyObject,
-            AVLinearPCMBitDepthKey:16 as AnyObject,
-            AVEncoderAudioQualityKey:AVAudioQuality.max.rawValue as AnyObject
+        let audioSession:AVAudioSession = AVAudioSession.sharedInstance();
+        let recordSettings: [String : Any] = [
+            AVFormatIDKey:kAudioFormatLinearPCM,
+            AVSampleRateKey:44100.0,
+            AVNumberOfChannelsKey:2,
+            AVEncoderBitRateKey:12800,
+            AVLinearPCMBitDepthKey:16,
+            AVEncoderAudioQualityKey:AVAudioQuality.max.rawValue
         ]
         
         do {
-            try recorder = AVAudioRecorder(url: url, settings: recordSettings);
-        }catch {
-            print("error");
+            
+            try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord);
+            try audioSession.setActive(true);
+            try recorder = AVAudioRecorder(url: URLForAudio(), settings: recordSettings);
+            recorder.prepareToRecord();
+            recorder.isMeteringEnabled = true;
+            recorder.record();
+
+        } catch {
+            
+            print("warning: audio session failed set up \(error)");
+            
         }
-        recorder.prepareToRecord()
-        recorder.isMeteringEnabled = true
         
-        recorder.record()
-        
-        self.levelTimer = Timer.scheduledTimer(timeInterval: kUpdateInterval, target: self,selector:#selector(self.levelTimerCallback), userInfo: nil, repeats: true)
+        levelTimer = Timer.scheduledTimer(timeInterval: kUpdateInterval,
+                                                target: self,
+                                              selector:#selector(self.levelTimerCallback),
+                                              userInfo: nil,
+                                               repeats: true)
+    }
+    
+    func URLForAudio() -> URL {
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0];
+        let str = documentsPath+"/recording.caf";
+        return URL(fileURLWithPath: str);
     }
 }
