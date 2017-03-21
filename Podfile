@@ -5,7 +5,7 @@ target 'LetsGetBlown' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for LetsGetBlown
+  # Pods for Blown
   pod 'PKHUD', '~> 4.0'
 
   target 'LetsGetBlownTests' do

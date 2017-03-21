@@ -24,7 +24,6 @@
 		B081E65B1E81D30400FCB331 /* blownicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B081E6581E81D30400FCB331 /* blownicon.png */; };
 		B081E65C1E81D30400FCB331 /* blowninstructions.png in Resources */ = {isa = PBXBuildFile; fileRef = B081E6591E81D30400FCB331 /* blowninstructions.png */; };
 		B081E65D1E81D30400FCB331 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B081E65A1E81D30400FCB331 /* Splash.png */; };
-		B081E65F1E81D31E00FCB331 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B081E65E1E81D31E00FCB331 /* Info.plist */; };
 		B081E6611E81D37700FCB331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B081E6601E81D37700FCB331 /* Assets.xcassets */; };
 		B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */; };
 		DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */; };
@@ -340,7 +339,6 @@
 				B081E65D1E81D30400FCB331 /* Splash.png in Resources */,
 				B081E65C1E81D30400FCB331 /* blowninstructions.png in Resources */,
 				B081E6611E81D37700FCB331 /* Assets.xcassets in Resources */,
-				B081E65F1E81D31E00FCB331 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
