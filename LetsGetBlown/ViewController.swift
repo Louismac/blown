@@ -14,9 +14,9 @@ import PKHUD
 // MARK: -  UIImage Extensions
 
 extension UIImage {
-    func crop( rect: CGRect, ciIm:CIImage, ctx:CIContext) -> UIImage? {
+    func crop(toRect rect: CGRect, withCIImage ciIm:CIImage, inContext ciContext:CIContext) -> UIImage? {
         
-        if let cropped = ctx.createCGImage(ciIm, from: rect) {
+        if let cropped = ciContext.createCGImage(ciIm, from: rect) {
             return UIImage(cgImage: cropped);
         }
         return nil;
@@ -152,8 +152,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             modeButton.setEnabled(enabled: false);
             modeButton.spinner.isHidden = true;
             
-            //instructionLabel.backgroundColor = blownGreen;
-
             newPhotoSelected();
             
             instructionLabel.isHidden = true;
@@ -182,9 +180,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pinsComplete = false;
         modeButton.setEnabled(enabled: false);
         instructionLabel.isHidden = false;
-//        pinView.layer.borderColor = blownGreen.cgColor;
-//        pinView.layer.borderWidth = 5.0;
-//        pinView.layer.cornerRadius = 10;
         
         showProcessingSpinner();
         
@@ -485,7 +480,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let imageProperties = propertiesFor(image:image) {
             
-            let ctx = CIContext(cgContext:imageProperties.cgContext,options:nil);
+            let ciContext = CIContext(cgContext:imageProperties.cgContext,options:nil);
             
             if let ciIm = CIImage(image:imageProperties.im) {
                 
@@ -495,7 +490,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         let fr = rectFor(pin:CGPoint(x:i,y:j));
                         let scaleFr = scaledRectFor(frame:fr, andImageProperties:imageProperties);
                         
-                        if let cropped = imageProperties.im.crop(rect:scaleFr,ciIm:ciIm,ctx:ctx) {
+                        if let cropped = imageProperties.im.crop(toRect:scaleFr,
+                                                                 withCIImage:ciIm,
+                                                                 inContext:ciContext) {
                             
                             pins[i][j].image = cropped;
                         
@@ -589,7 +586,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         var xDelta = imW - (vW*wScale);
         if xDelta != 0 {
-            xDelta-=pinW;
+            xDelta-=(pinW*wScale);
         }
         
         let size = CGSize(width:pinW, height:pinH);
