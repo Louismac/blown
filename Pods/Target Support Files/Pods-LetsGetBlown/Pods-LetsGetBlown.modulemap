@@ -1,6 +1,0 @@
-framework module Pods_LetsGetBlown {
-  umbrella header "Pods-LetsGetBlown-umbrella.h"
-
-  export *
-  module * { export * }
-}

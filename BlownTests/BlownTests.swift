@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import LetsGetBlown
+@testable import Blown
 
 class LetsGetBlownTests: XCTestCase {
     

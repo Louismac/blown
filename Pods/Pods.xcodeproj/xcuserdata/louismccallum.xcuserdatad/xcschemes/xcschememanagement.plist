@@ -8,44 +8,36 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
-		<key>Pods-LetsGetBlown.xcscheme</key>
+		<key>Pods-Blown.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
-		<key>Pods-LetsGetBlownTests.xcscheme</key>
+		<key>Pods-BlownTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
-		<key>Pods-LetsGetBlownUITests.xcscheme</key>
+		<key>Pods-BlownUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3DA781F748D8A347C5D1FA6BB9B4AD78</key>
+		<key>5A0DB0A88219C2A0B105C91895E0B64C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BE440B781AAD8C3309C5F454258D46D</key>
+		<key>CC472559832C1A7F432E426C3E4837BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C50AD41AB149C7838397834AA2CC85AE</key>
+		<key>D21453F10FC8AF13EB97B7FA9DFE920D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

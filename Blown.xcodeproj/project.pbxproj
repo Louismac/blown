@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110C59AD85A4F7CD53626151 /* Pods_BlownUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE80FFBBFA8BF061C6AB7A25 /* Pods_BlownUITests.framework */; };
+		47DD9008BB49F5697F00762B /* Pods_BlownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2D93A3E87F331A92E82C40 /* Pods_BlownTests.framework */; };
 		82A2EB5928F40A7304AE8024 /* Pods_LetsGetBlownUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */; };
 		B000CA521E8166F600B4A16F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B000CA511E8166F600B4A16F /* Podfile */; };
-		B0579F3C1E7AEA0E00DF824A /* LetsGetBlownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F3B1E7AEA0E00DF824A /* LetsGetBlownTests.swift */; };
-		B0579F471E7AEA0E00DF824A /* LetsGetBlownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */; };
+		B0579F3C1E7AEA0E00DF824A /* BlownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F3B1E7AEA0E00DF824A /* BlownTests.swift */; };
+		B0579F471E7AEA0E00DF824A /* BlownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F461E7AEA0E00DF824A /* BlownUITests.swift */; };
 		B081E64A1E81D2DC00FCB331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081E6421E81D2DC00FCB331 /* AppDelegate.swift */; };
 		B081E64B1E81D2DC00FCB331 /* Attractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081E6431E81D2DC00FCB331 /* Attractor.swift */; };
 		B081E64C1E81D2DC00FCB331 /* AudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081E6441E81D2DC00FCB331 /* AudioDetector.swift */; };
@@ -26,6 +28,7 @@
 		B081E65D1E81D30400FCB331 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B081E65A1E81D30400FCB331 /* Splash.png */; };
 		B081E6611E81D37700FCB331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B081E6601E81D37700FCB331 /* Assets.xcassets */; };
 		B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */; };
+		C92FD09E3CA8745A54212E05 /* Pods_Blown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4D1500E4AA20DB54236B12 /* Pods_Blown.framework */; };
 		DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,21 +50,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C2A5B632722BF24BA1F7192 /* Pods-Blown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blown/Pods-Blown.debug.xcconfig"; sourceTree = "<group>"; };
 		13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown.debug.xcconfig"; sourceTree = "<group>"; };
+		2D24250C8D51AE38432B30D8 /* Pods-BlownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlownTests/Pods-BlownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests.release.xcconfig"; sourceTree = "<group>"; };
 		593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlownUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66648A4B24209E9BBD9EA94E /* Pods-BlownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlownUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlownUITests/Pods-BlownUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		776C019F8B90921C8DDD23CE /* Pods-BlownUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlownUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlownUITests/Pods-BlownUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E710F77704378624BADC920 /* Pods-LetsGetBlownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808F61D13FB4CBA1E4ED5571 /* Pods-Blown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blown.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blown/Pods-Blown.release.xcconfig"; sourceTree = "<group>"; };
+		9AFBB62FDC05192EA6628B60 /* Pods-BlownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlownTests/Pods-BlownTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B4D1500E4AA20DB54236B12 /* Pods_Blown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B000CA511E8166F600B4A16F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B0579F231E7AEA0E00DF824A /* Blown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0579F371E7AEA0E00DF824A /* BlownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0579F3B1E7AEA0E00DF824A /* LetsGetBlownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsGetBlownTests.swift; sourceTree = "<group>"; };
+		B0579F3B1E7AEA0E00DF824A /* BlownTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlownTests.swift; sourceTree = "<group>"; };
 		B0579F3D1E7AEA0E00DF824A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0579F421E7AEA0E00DF824A /* BlownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsGetBlownUITests.swift; sourceTree = "<group>"; };
+		B0579F461E7AEA0E00DF824A /* BlownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlownUITests.swift; sourceTree = "<group>"; };
 		B0579F481E7AEA0E00DF824A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B081E6421E81D2DC00FCB331 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Blown/Swift/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		B081E6431E81D2DC00FCB331 /* Attractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attractor.swift; path = Blown/Swift/Attractor.swift; sourceTree = SOURCE_ROOT; };
@@ -79,6 +89,8 @@
 		B081E65E1E81D31E00FCB331 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Blown/Info.plist; sourceTree = SOURCE_ROOT; };
 		B081E6601E81D37700FCB331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Blown/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlown.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown.release.xcconfig"; sourceTree = "<group>"; };
+		BA2D93A3E87F331A92E82C40 /* Pods_BlownTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE80FFBBFA8BF061C6AB7A25 /* Pods_BlownUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlownUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */,
+				C92FD09E3CA8745A54212E05 /* Pods_Blown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */,
+				47DD9008BB49F5697F00762B /* Pods_BlownTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82A2EB5928F40A7304AE8024 /* Pods_LetsGetBlownUITests.framework in Frameworks */,
+				110C59AD85A4F7CD53626151 /* Pods_BlownUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +130,9 @@
 				8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */,
 				7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */,
 				593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */,
+				9B4D1500E4AA20DB54236B12 /* Pods_Blown.framework */,
+				BA2D93A3E87F331A92E82C40 /* Pods_BlownTests.framework */,
+				DE80FFBBFA8BF061C6AB7A25 /* Pods_BlownUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,6 +146,12 @@
 				31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */,
 				6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */,
 				A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */,
+				0C2A5B632722BF24BA1F7192 /* Pods-Blown.debug.xcconfig */,
+				808F61D13FB4CBA1E4ED5571 /* Pods-Blown.release.xcconfig */,
+				2D24250C8D51AE38432B30D8 /* Pods-BlownTests.debug.xcconfig */,
+				9AFBB62FDC05192EA6628B60 /* Pods-BlownTests.release.xcconfig */,
+				776C019F8B90921C8DDD23CE /* Pods-BlownUITests.debug.xcconfig */,
+				66648A4B24209E9BBD9EA94E /* Pods-BlownUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,7 +221,7 @@
 		B0579F3A1E7AEA0E00DF824A /* BlownTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0579F3B1E7AEA0E00DF824A /* LetsGetBlownTests.swift */,
+				B0579F3B1E7AEA0E00DF824A /* BlownTests.swift */,
 				B0579F3D1E7AEA0E00DF824A /* Info.plist */,
 			);
 			name = BlownTests;
@@ -207,7 +231,7 @@
 		B0579F451E7AEA0E00DF824A /* BlownUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */,
+				B0579F461E7AEA0E00DF824A /* BlownUITests.swift */,
 				B0579F481E7AEA0E00DF824A /* Info.plist */,
 			);
 			name = BlownUITests;
@@ -386,7 +410,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlownTests/Pods-BlownTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3D174C77499D4E8C899F2E41 /* [CP] Embed Pods Frameworks */ = {
@@ -401,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlownUITests/Pods-BlownUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		43113F1E0A283D34C1378DBA /* [CP] Embed Pods Frameworks */ = {
@@ -416,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlownTests/Pods-BlownTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8A461507DB68A0467062B378 /* [CP] Copy Pods Resources */ = {
@@ -431,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blown/Pods-Blown-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9628ACAEA48B3D976D166F9E /* [CP] Copy Pods Resources */ = {
@@ -446,7 +470,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlownUITests/Pods-BlownUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9FDE252C0275559B6235D875 /* [CP] Check Pods Manifest.lock */ = {
@@ -491,7 +515,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blown/Pods-Blown-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -516,7 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0579F3C1E7AEA0E00DF824A /* LetsGetBlownTests.swift in Sources */,
+				B0579F3C1E7AEA0E00DF824A /* BlownTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0579F471E7AEA0E00DF824A /* LetsGetBlownUITests.swift in Sources */,
+				B0579F471E7AEA0E00DF824A /* BlownUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +682,7 @@
 		};
 		B0579F4C1E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */;
+			baseConfigurationReference = 0C2A5B632722BF24BA1F7192 /* Pods-Blown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -675,7 +699,7 @@
 		};
 		B0579F4D1E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */;
+			baseConfigurationReference = 808F61D13FB4CBA1E4ED5571 /* Pods-Blown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -691,7 +715,7 @@
 		};
 		B0579F4F1E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E710F77704378624BADC920 /* Pods-LetsGetBlownTests.debug.xcconfig */;
+			baseConfigurationReference = 2D24250C8D51AE38432B30D8 /* Pods-BlownTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -706,7 +730,7 @@
 		};
 		B0579F501E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */;
+			baseConfigurationReference = 9AFBB62FDC05192EA6628B60 /* Pods-BlownTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -721,7 +745,7 @@
 		};
 		B0579F521E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */;
+			baseConfigurationReference = 776C019F8B90921C8DDD23CE /* Pods-BlownUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LetsGetBlownUITests/Info.plist;
@@ -735,7 +759,7 @@
 		};
 		B0579F531E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */;
+			baseConfigurationReference = 66648A4B24209E9BBD9EA94E /* Pods-BlownUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LetsGetBlownUITests/Info.plist;

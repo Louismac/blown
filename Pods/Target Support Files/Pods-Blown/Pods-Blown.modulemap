@@ -1,0 +1,6 @@
+framework module Pods_Blown {
+  umbrella header "Pods-Blown-umbrella.h"
+
+  export *
+  module * { export * }
+}
