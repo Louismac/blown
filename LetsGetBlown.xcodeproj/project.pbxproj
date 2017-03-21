@@ -9,22 +9,22 @@
 /* Begin PBXBuildFile section */
 		82A2EB5928F40A7304AE8024 /* Pods_LetsGetBlownUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */; };
 		B000CA521E8166F600B4A16F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B000CA511E8166F600B4A16F /* Podfile */; };
-		B000CA561E817CF700B4A16F /* blownicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA551E817CF700B4A16F /* blownicon.png */; };
-		B000CA581E817DE400B4A16F /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA571E817DE400B4A16F /* Splash.png */; };
-		B000CA5A1E81816F00B4A16F /* RoundedGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */; };
-		B000CA5C1E818DEB00B4A16F /* blowninstructions.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA5B1E818DEB00B4A16F /* blowninstructions.png */; };
-		B000CA5F1E81CB5800B4A16F /* ImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000CA5E1E81CB5800B4A16F /* ImageTools.swift */; };
-		B0579F271E7AEA0E00DF824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F261E7AEA0E00DF824A /* AppDelegate.swift */; };
-		B0579F291E7AEA0E00DF824A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F281E7AEA0E00DF824A /* ViewController.swift */; };
+		B023550A1E81CFFE00E52C09 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355021E81CFFE00E52C09 /* PinView.swift */; };
+		B023550B1E81CFFE00E52C09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355031E81CFFE00E52C09 /* ViewController.swift */; };
+		B023550C1E81CFFE00E52C09 /* ImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355041E81CFFE00E52C09 /* ImageTools.swift */; };
+		B023550D1E81CFFE00E52C09 /* AudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355051E81CFFE00E52C09 /* AudioDetector.swift */; };
+		B023550E1E81CFFE00E52C09 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355061E81CFFE00E52C09 /* Pin.swift */; };
+		B023550F1E81CFFE00E52C09 /* Attractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355071E81CFFE00E52C09 /* Attractor.swift */; };
+		B02355101E81CFFE00E52C09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355081E81CFFE00E52C09 /* AppDelegate.swift */; };
+		B02355111E81CFFE00E52C09 /* RoundedGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02355091E81CFFE00E52C09 /* RoundedGreenButton.swift */; };
+		B02355151E81D00A00E52C09 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B02355121E81D00A00E52C09 /* Splash.png */; };
+		B02355161E81D00A00E52C09 /* blowninstructions.png in Resources */ = {isa = PBXBuildFile; fileRef = B02355131E81D00A00E52C09 /* blowninstructions.png */; };
+		B02355171E81D00A00E52C09 /* blownicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B02355141E81D00A00E52C09 /* blownicon.png */; };
 		B0579F2C1E7AEA0E00DF824A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0579F2A1E7AEA0E00DF824A /* Main.storyboard */; };
 		B0579F2E1E7AEA0E00DF824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0579F2D1E7AEA0E00DF824A /* Assets.xcassets */; };
 		B0579F311E7AEA0E00DF824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0579F2F1E7AEA0E00DF824A /* LaunchScreen.storyboard */; };
 		B0579F3C1E7AEA0E00DF824A /* LetsGetBlownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F3B1E7AEA0E00DF824A /* LetsGetBlownTests.swift */; };
 		B0579F471E7AEA0E00DF824A /* LetsGetBlownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */; };
-		B0579F551E7AEA2600DF824A /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F541E7AEA2600DF824A /* Pin.swift */; };
-		B0579F571E7AF00600DF824A /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F561E7AF00600DF824A /* PinView.swift */; };
-		B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB8F661E80175B00C80827 /* Attractor.swift */; };
-		B0FB8F691E8023AE00C80827 /* AudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB8F681E8023AE00C80827 /* AudioDetector.swift */; };
 		B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */; };
 		DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */; };
 /* End PBXBuildFile section */
@@ -56,14 +56,18 @@
 		8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B000CA511E8166F600B4A16F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
-		B000CA551E817CF700B4A16F /* blownicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blownicon.png; sourceTree = "<group>"; };
-		B000CA571E817DE400B4A16F /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
-		B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedGreenButton.swift; sourceTree = "<group>"; };
-		B000CA5B1E818DEB00B4A16F /* blowninstructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blowninstructions.png; sourceTree = "<group>"; };
-		B000CA5E1E81CB5800B4A16F /* ImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTools.swift; sourceTree = "<group>"; };
+		B02355021E81CFFE00E52C09 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PinView.swift; path = Swift/PinView.swift; sourceTree = "<group>"; };
+		B02355031E81CFFE00E52C09 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Swift/ViewController.swift; sourceTree = "<group>"; };
+		B02355041E81CFFE00E52C09 /* ImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTools.swift; path = Swift/ImageTools.swift; sourceTree = "<group>"; };
+		B02355051E81CFFE00E52C09 /* AudioDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioDetector.swift; path = Swift/AudioDetector.swift; sourceTree = "<group>"; };
+		B02355061E81CFFE00E52C09 /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pin.swift; path = Swift/Pin.swift; sourceTree = "<group>"; };
+		B02355071E81CFFE00E52C09 /* Attractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attractor.swift; path = Swift/Attractor.swift; sourceTree = "<group>"; };
+		B02355081E81CFFE00E52C09 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Swift/AppDelegate.swift; sourceTree = "<group>"; };
+		B02355091E81CFFE00E52C09 /* RoundedGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedGreenButton.swift; path = Swift/RoundedGreenButton.swift; sourceTree = "<group>"; };
+		B02355121E81D00A00E52C09 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splash.png; path = Images/Splash.png; sourceTree = "<group>"; };
+		B02355131E81D00A00E52C09 /* blowninstructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blowninstructions.png; path = Images/blowninstructions.png; sourceTree = "<group>"; };
+		B02355141E81D00A00E52C09 /* blownicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blownicon.png; path = Images/blownicon.png; sourceTree = "<group>"; };
 		B0579F231E7AEA0E00DF824A /* LetsGetBlown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsGetBlown.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0579F261E7AEA0E00DF824A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0579F281E7AEA0E00DF824A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0579F2B1E7AEA0E00DF824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0579F2D1E7AEA0E00DF824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0579F301E7AEA0E00DF824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,10 +78,6 @@
 		B0579F421E7AEA0E00DF824A /* LetsGetBlownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LetsGetBlownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsGetBlownUITests.swift; sourceTree = "<group>"; };
 		B0579F481E7AEA0E00DF824A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0579F541E7AEA2600DF824A /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
-		B0579F561E7AF00600DF824A /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
-		B0FB8F661E80175B00C80827 /* Attractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attractor.swift; sourceTree = "<group>"; };
-		B0FB8F681E8023AE00C80827 /* AudioDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDetector.swift; sourceTree = "<group>"; };
 		B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlown.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,11 +135,26 @@
 		B000CA5D1E818F2200B4A16F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B000CA571E817DE400B4A16F /* Splash.png */,
-				B000CA551E817CF700B4A16F /* blownicon.png */,
-				B000CA5B1E818DEB00B4A16F /* blowninstructions.png */,
+				B02355121E81D00A00E52C09 /* Splash.png */,
+				B02355131E81D00A00E52C09 /* blowninstructions.png */,
+				B02355141E81D00A00E52C09 /* blownicon.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		B02355011E81CF7100E52C09 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				B02355021E81CFFE00E52C09 /* PinView.swift */,
+				B02355031E81CFFE00E52C09 /* ViewController.swift */,
+				B02355041E81CFFE00E52C09 /* ImageTools.swift */,
+				B02355051E81CFFE00E52C09 /* AudioDetector.swift */,
+				B02355061E81CFFE00E52C09 /* Pin.swift */,
+				B02355071E81CFFE00E52C09 /* Attractor.swift */,
+				B02355081E81CFFE00E52C09 /* AppDelegate.swift */,
+				B02355091E81CFFE00E52C09 /* RoundedGreenButton.swift */,
+			);
+			name = Swift;
 			sourceTree = "<group>";
 		};
 		B0579F1A1E7AEA0E00DF824A = {
@@ -167,14 +182,7 @@
 		B0579F251E7AEA0E00DF824A /* LetsGetBlown */ = {
 			isa = PBXGroup;
 			children = (
-				B0579F261E7AEA0E00DF824A /* AppDelegate.swift */,
-				B0579F281E7AEA0E00DF824A /* ViewController.swift */,
-				B000CA5E1E81CB5800B4A16F /* ImageTools.swift */,
-				B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */,
-				B0FB8F681E8023AE00C80827 /* AudioDetector.swift */,
-				B0FB8F661E80175B00C80827 /* Attractor.swift */,
-				B0579F541E7AEA2600DF824A /* Pin.swift */,
-				B0579F561E7AF00600DF824A /* PinView.swift */,
+				B02355011E81CF7100E52C09 /* Swift */,
 				B0579F2A1E7AEA0E00DF824A /* Main.storyboard */,
 				B0579F2D1E7AEA0E00DF824A /* Assets.xcassets */,
 				B000CA5D1E818F2200B4A16F /* Images */,
@@ -281,6 +289,7 @@
 					B0579F221E7AEA0E00DF824A = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 37VBV43PK2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					B0579F361E7AEA0E00DF824A = {
@@ -322,11 +331,11 @@
 			files = (
 				B0579F311E7AEA0E00DF824A /* LaunchScreen.storyboard in Resources */,
 				B0579F2E1E7AEA0E00DF824A /* Assets.xcassets in Resources */,
-				B000CA581E817DE400B4A16F /* Splash.png in Resources */,
+				B02355151E81D00A00E52C09 /* Splash.png in Resources */,
+				B02355171E81D00A00E52C09 /* blownicon.png in Resources */,
 				B0579F2C1E7AEA0E00DF824A /* Main.storyboard in Resources */,
 				B000CA521E8166F600B4A16F /* Podfile in Resources */,
-				B000CA561E817CF700B4A16F /* blownicon.png in Resources */,
-				B000CA5C1E818DEB00B4A16F /* blowninstructions.png in Resources */,
+				B02355161E81D00A00E52C09 /* blowninstructions.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,14 +498,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0579F551E7AEA2600DF824A /* Pin.swift in Sources */,
-				B0579F291E7AEA0E00DF824A /* ViewController.swift in Sources */,
-				B0579F571E7AF00600DF824A /* PinView.swift in Sources */,
-				B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */,
-				B0FB8F691E8023AE00C80827 /* AudioDetector.swift in Sources */,
-				B0579F271E7AEA0E00DF824A /* AppDelegate.swift in Sources */,
-				B000CA5A1E81816F00B4A16F /* RoundedGreenButton.swift in Sources */,
-				B000CA5F1E81CB5800B4A16F /* ImageTools.swift in Sources */,
+				B023550E1E81CFFE00E52C09 /* Pin.swift in Sources */,
+				B02355111E81CFFE00E52C09 /* RoundedGreenButton.swift in Sources */,
+				B023550B1E81CFFE00E52C09 /* ViewController.swift in Sources */,
+				B023550C1E81CFFE00E52C09 /* ImageTools.swift in Sources */,
+				B023550D1E81CFFE00E52C09 /* AudioDetector.swift in Sources */,
+				B02355101E81CFFE00E52C09 /* AppDelegate.swift in Sources */,
+				B023550F1E81CFFE00E52C09 /* Attractor.swift in Sources */,
+				B023550A1E81CFFE00E52C09 /* PinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,11 +658,13 @@
 			baseConfigurationReference = 13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 37VBV43PK2;
 				INFOPLIST_FILE = LetsGetBlown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismac.LetsGetBlown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -664,6 +675,7 @@
 			baseConfigurationReference = B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 37VBV43PK2;
 				INFOPLIST_FILE = LetsGetBlown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
