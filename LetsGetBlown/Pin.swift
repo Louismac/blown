@@ -20,6 +20,7 @@ class Pin {
     var thetaDot:Double = 0.0
     var colors:[[UIColor]] = [[UIColor]]();
     var update:Bool = true;
+    var image:UIImage!;
     
     func setDefaultColors(w:Int,h:Int) {
         

@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import CoreImage
+import PKHUD
 
 // MARK: -  UIImage Extensions
 
@@ -23,6 +24,7 @@ extension UIImage {
     
     func pixelData(cgImage:CGImage, pixelData:inout [UInt8])
     {
+
         if let cgContext = CGContext(data: &pixelData,
                                      width: Int(size.width),
                                      height: Int(size.height),
@@ -50,10 +52,13 @@ typealias ImageProperties = (hScale:CGFloat,
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var pinView: UIView!
+    @IBOutlet weak var modeButton: RoundedGreenButton!
+    @IBOutlet weak var selectPhotoButton: RoundedGreenButton!
     
     var pins = [[Pin]]()
     var pinViews = [[PinView]]()
     var attractors = Set<Attractor>()
+    
     let withinPin = 2;
     let pinsX = 15;
     let pinsY = 21;
@@ -67,6 +72,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return floor((CGFloat(self.pinView.frame.size.height)/CGFloat(pinsY)));
         }
     }
+    
     var pixelsX:Int {
         get {
             return pinsX*withinPin;
@@ -92,12 +98,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let overlapH:CGFloat = 0.96
     let blowVelocity:Float = 14;
     var firstPass = true;
+    var pinsComplete = false;
+    var pixelsComplete = false;
     var hasLaidOutSubViews = false;
     var pixels = false;
+    
     var audioDetector:AudioDetector?;
     let imagePicker = UIImagePickerController();
-    var image:UIImage? = UIImage(named:"IMG_2636.JPG");
-    
+    var image:UIImage? = UIImage(named: "blowninstructions");
+    let queue = DispatchQueue(label: "com.blown.photoqueue");
     
     // MARK: - Setup
     
@@ -105,7 +114,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         super.viewDidLoad()
         
-        updateMode();
+        initModel();
+        
         let link = CADisplayLink(target: self, selector: #selector(ViewController.update));
         link.add(to:.current,forMode:.defaultRunLoopMode);
         
@@ -113,6 +123,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         audioDetector?.delegate=self;
         
         imagePicker.delegate = self;
+        
+        HUD.dimsBackground = true;
+        HUD.allowsInteraction = false;
         
     }
     
@@ -132,18 +145,93 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             centre.y = pinView.center.y;
             pinView.center = centre;
             hasLaidOutSubViews = true;
+            modeButton.setEnabled(enabled: false);
+            modeButton.spinner.isHidden = true;
+            
+            newPhotoSelected();
             
         }
     }
     
+    func newPhotoSelected() {
+        
+        modeButton.spinner.isHidden = false;
+        pixels = false;
+        pixelsComplete = false;
+        pinsComplete = false;
+        modeButton.setEnabled(enabled: false);
+        
+        showProcessingSpinner();
+        
+        queue.async {
+            
+            self.setPins(fromImage: self.image!)
+            
+            DispatchQueue.main.async {
+                self.refreshViews();
+            }
+            
+            self.setPixels(fromImage: self.image!);
+        }
+        
+    }
+    
     func updateMode() {
         
-        updateModel();
-        pixels ? setPixels(fromImage: image!):setPins(fromImage: image!);
+        if pixels,!pixelsComplete {
+            
+            showProcessingSpinner();
+            
+            queue.async {
+                self.setPixels(fromImage: self.image!);
+                DispatchQueue.main.async {
+                    self.refreshViews();
+                }
+                
+            }
+            
+        } else if !pixels,!pinsComplete {
+            
+            showProcessingSpinner();
+            
+            queue.async {
+                
+                self.setPins(fromImage: self.image!);
+                DispatchQueue.main.async {
+                    self.refreshViews();
+                }
+                
+            }
+            
+        } else {
+            
+            refreshViews();
+        
+        }
     
     }
     
-    func updateModel() {
+    func refreshViews() {
+        
+        HUD.hide();
+        modeButton.setTitle((pixels ? "Photo":"Pixels"), for: UIControlState.normal);
+        for i in 0...pinsX-1 {
+            for j in 0...pinsY-1 {
+                
+                let pv = pinViews[i][j];
+                pv.imV.isHidden = pixels;
+                pv.pixels = pixels;
+                
+                if(!pixels) {
+                    pinViews[i][j].imV.image = pins[i][j].image;
+                } else {
+                    pinViews[i][j].setNeedsDisplay();
+                }
+            }
+        }
+    }
+    
+    func initModel() {
         
         //Clear old views
         pinView.subviews.forEach({$0.removeFromSuperview()});
@@ -345,7 +433,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             image = pickedImage;
-            updateMode()
+            newPhotoSelected()
         }
         
         dismiss(animated: true, completion: nil)
@@ -375,13 +463,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         
                         if let cropped = imageProperties.im.crop(rect:scaleFr,ciIm:ciIm,ctx:ctx) {
                             
-                            pinViews[i][j].imV.image = cropped;
+                            pins[i][j].image = cropped;
                         
                         }
                     }
                 }
             }
         }
+        pinsComplete = true;
     }
     
     func setPixels(fromImage image:UIImage) {
@@ -419,6 +508,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
             }
         }
+        
+        modeButton.setEnabled(enabled: true);
+        pixelsComplete = true;
+    
     }
     
     func setColorOf(pixel coordinate:CGPoint, withColor pixelData:[UInt8]) {
@@ -517,6 +610,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func velFrom(vol:Float) -> Double {
         
         return Double(vol+blowVelocity);
+        
+    }
+    
+    func showProcessingSpinner() {
+        
+        DispatchQueue.main.async {
+            HUD.show(.labeledProgress(title: "Please wait", subtitle: "Processing"), onView: self.view);
+        }
         
     }
 

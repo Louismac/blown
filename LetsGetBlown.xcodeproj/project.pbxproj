@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82A2EB5928F40A7304AE8024 /* Pods_LetsGetBlownUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */; };
+		B000CA521E8166F600B4A16F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B000CA511E8166F600B4A16F /* Podfile */; };
+		B000CA561E817CF700B4A16F /* blownicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA551E817CF700B4A16F /* blownicon.png */; };
+		B000CA581E817DE400B4A16F /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA571E817DE400B4A16F /* Splash.png */; };
+		B000CA5A1E81816F00B4A16F /* RoundedGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */; };
+		B000CA5C1E818DEB00B4A16F /* blowninstructions.png in Resources */ = {isa = PBXBuildFile; fileRef = B000CA5B1E818DEB00B4A16F /* blowninstructions.png */; };
 		B0579F271E7AEA0E00DF824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F261E7AEA0E00DF824A /* AppDelegate.swift */; };
 		B0579F291E7AEA0E00DF824A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F281E7AEA0E00DF824A /* ViewController.swift */; };
 		B0579F2C1E7AEA0E00DF824A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0579F2A1E7AEA0E00DF824A /* Main.storyboard */; };
@@ -16,13 +22,11 @@
 		B0579F471E7AEA0E00DF824A /* LetsGetBlownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */; };
 		B0579F551E7AEA2600DF824A /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F541E7AEA2600DF824A /* Pin.swift */; };
 		B0579F571E7AF00600DF824A /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0579F561E7AF00600DF824A /* PinView.swift */; };
-		B07DACFA1E7C469D006415DC /* IMG_2228.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACF91E7C469D006415DC /* IMG_2228.JPG */; };
-		B07DACFC1E7C6636006415DC /* IMG_2205.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACFB1E7C6636006415DC /* IMG_2205.JPG */; };
-		B07DACFE1E7C66BD006415DC /* IMG_2206.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACFD1E7C66BD006415DC /* IMG_2206.JPG */; };
 		B07DAD001E7C6CF4006415DC /* IMG_2636.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B07DACFF1E7C6CF4006415DC /* IMG_2636.JPG */; };
-		B08CDBB81E7D642300624612 /* iPhone_7.png in Resources */ = {isa = PBXBuildFile; fileRef = B08CDBB71E7D642300624612 /* iPhone_7.png */; };
 		B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB8F661E80175B00C80827 /* Attractor.swift */; };
 		B0FB8F691E8023AE00C80827 /* AudioDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB8F681E8023AE00C80827 /* AudioDetector.swift */; };
+		B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */; };
+		DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlown.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown.debug.xcconfig"; sourceTree = "<group>"; };
+		31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests.release.xcconfig"; sourceTree = "<group>"; };
+		593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlownUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E710F77704378624BADC920 /* Pods-LetsGetBlownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LetsGetBlown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlownUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B000CA511E8166F600B4A16F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		B000CA551E817CF700B4A16F /* blownicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blownicon.png; sourceTree = "<group>"; };
+		B000CA571E817DE400B4A16F /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedGreenButton.swift; sourceTree = "<group>"; };
+		B000CA5B1E818DEB00B4A16F /* blowninstructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blowninstructions.png; sourceTree = "<group>"; };
 		B0579F231E7AEA0E00DF824A /* LetsGetBlown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsGetBlown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0579F261E7AEA0E00DF824A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0579F281E7AEA0E00DF824A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,13 +75,10 @@
 		B0579F481E7AEA0E00DF824A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0579F541E7AEA2600DF824A /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		B0579F561E7AF00600DF824A /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
-		B07DACF91E7C469D006415DC /* IMG_2228.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2228.JPG; sourceTree = "<group>"; };
-		B07DACFB1E7C6636006415DC /* IMG_2205.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2205.JPG; sourceTree = "<group>"; };
-		B07DACFD1E7C66BD006415DC /* IMG_2206.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2206.JPG; sourceTree = "<group>"; };
 		B07DACFF1E7C6CF4006415DC /* IMG_2636.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_2636.JPG; sourceTree = "<group>"; };
-		B08CDBB71E7D642300624612 /* iPhone_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone_7.png; sourceTree = "<group>"; };
 		B0FB8F661E80175B00C80827 /* Attractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attractor.swift; sourceTree = "<group>"; };
 		B0FB8F681E8023AE00C80827 /* AudioDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDetector.swift; sourceTree = "<group>"; };
+		B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LetsGetBlown.release.xcconfig"; path = "Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB51C7856A60D11CD1BFC56 /* Pods_LetsGetBlown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8BB7E57FF883FA5459A813E /* Pods_LetsGetBlownTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +102,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A2EB5928F40A7304AE8024 /* Pods_LetsGetBlownUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77BBBEE52ECF12174F03DB2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8034D79E8AA362FE2AC56704 /* Pods_LetsGetBlown.framework */,
+				7893FAC30EE6FA431FD75F8C /* Pods_LetsGetBlownTests.framework */,
+				593CD42236321705CEC4D6FA /* Pods_LetsGetBlownUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C14BFCA32F5A347CAA3A5AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */,
+				B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */,
+				7E710F77704378624BADC920 /* Pods-LetsGetBlownTests.debug.xcconfig */,
+				31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */,
+				6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */,
+				A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B0579F1A1E7AEA0E00DF824A = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +139,8 @@
 				B0579F3A1E7AEA0E00DF824A /* LetsGetBlownTests */,
 				B0579F451E7AEA0E00DF824A /* LetsGetBlownUITests */,
 				B0579F241E7AEA0E00DF824A /* Products */,
+				7C14BFCA32F5A347CAA3A5AE /* Pods */,
+				77BBBEE52ECF12174F03DB2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,19 +159,20 @@
 			children = (
 				B0579F261E7AEA0E00DF824A /* AppDelegate.swift */,
 				B0579F281E7AEA0E00DF824A /* ViewController.swift */,
+				B000CA591E81816F00B4A16F /* RoundedGreenButton.swift */,
 				B0FB8F681E8023AE00C80827 /* AudioDetector.swift */,
 				B0FB8F661E80175B00C80827 /* Attractor.swift */,
 				B0579F541E7AEA2600DF824A /* Pin.swift */,
 				B0579F561E7AF00600DF824A /* PinView.swift */,
 				B0579F2A1E7AEA0E00DF824A /* Main.storyboard */,
 				B0579F2D1E7AEA0E00DF824A /* Assets.xcassets */,
+				B000CA571E817DE400B4A16F /* Splash.png */,
+				B000CA551E817CF700B4A16F /* blownicon.png */,
 				B07DACFF1E7C6CF4006415DC /* IMG_2636.JPG */,
-				B07DACF91E7C469D006415DC /* IMG_2228.JPG */,
-				B07DACFD1E7C66BD006415DC /* IMG_2206.JPG */,
-				B07DACFB1E7C6636006415DC /* IMG_2205.JPG */,
-				B08CDBB71E7D642300624612 /* iPhone_7.png */,
 				B0579F2F1E7AEA0E00DF824A /* LaunchScreen.storyboard */,
+				B000CA5B1E818DEB00B4A16F /* blowninstructions.png */,
 				B0579F321E7AEA0E00DF824A /* Info.plist */,
+				B000CA511E8166F600B4A16F /* Podfile */,
 			);
 			path = LetsGetBlown;
 			sourceTree = "<group>";
@@ -159,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0579F4B1E7AEA0E00DF824A /* Build configuration list for PBXNativeTarget "LetsGetBlown" */;
 			buildPhases = (
+				C0FAB4A59B3133A05AA78876 /* [CP] Check Pods Manifest.lock */,
 				B0579F1F1E7AEA0E00DF824A /* Sources */,
 				B0579F201E7AEA0E00DF824A /* Frameworks */,
 				B0579F211E7AEA0E00DF824A /* Resources */,
+				E252B8A72E4B90B00B74765A /* [CP] Embed Pods Frameworks */,
+				8A461507DB68A0467062B378 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0579F4E1E7AEA0E00DF824A /* Build configuration list for PBXNativeTarget "LetsGetBlownTests" */;
 			buildPhases = (
+				9FDE252C0275559B6235D875 /* [CP] Check Pods Manifest.lock */,
 				B0579F331E7AEA0E00DF824A /* Sources */,
 				B0579F341E7AEA0E00DF824A /* Frameworks */,
 				B0579F351E7AEA0E00DF824A /* Resources */,
+				43113F1E0A283D34C1378DBA /* [CP] Embed Pods Frameworks */,
+				2BCC679DEC1409C2F6AAA018 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,9 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0579F511E7AEA0E00DF824A /* Build configuration list for PBXNativeTarget "LetsGetBlownUITests" */;
 			buildPhases = (
+				08CF5945AB9A965C33DC1E7B /* [CP] Check Pods Manifest.lock */,
 				B0579F3E1E7AEA0E00DF824A /* Sources */,
 				B0579F3F1E7AEA0E00DF824A /* Frameworks */,
 				B0579F401E7AEA0E00DF824A /* Resources */,
+				3D174C77499D4E8C899F2E41 /* [CP] Embed Pods Frameworks */,
+				9628ACAEA48B3D976D166F9E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,13 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0579F311E7AEA0E00DF824A /* LaunchScreen.storyboard in Resources */,
-				B08CDBB81E7D642300624612 /* iPhone_7.png in Resources */,
-				B07DACFA1E7C469D006415DC /* IMG_2228.JPG in Resources */,
-				B07DACFC1E7C6636006415DC /* IMG_2205.JPG in Resources */,
 				B0579F2E1E7AEA0E00DF824A /* Assets.xcassets in Resources */,
+				B000CA581E817DE400B4A16F /* Splash.png in Resources */,
 				B0579F2C1E7AEA0E00DF824A /* Main.storyboard in Resources */,
+				B000CA521E8166F600B4A16F /* Podfile in Resources */,
+				B000CA561E817CF700B4A16F /* blownicon.png in Resources */,
 				B07DAD001E7C6CF4006415DC /* IMG_2636.JPG in Resources */,
-				B07DACFE1E7C66BD006415DC /* IMG_2206.JPG in Resources */,
+				B000CA5C1E818DEB00B4A16F /* blowninstructions.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +339,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08CF5945AB9A965C33DC1E7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2BCC679DEC1409C2F6AAA018 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D174C77499D4E8C899F2E41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43113F1E0A283D34C1378DBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownTests/Pods-LetsGetBlownTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A461507DB68A0467062B378 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9628ACAEA48B3D976D166F9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlownUITests/Pods-LetsGetBlownUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FDE252C0275559B6235D875 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C0FAB4A59B3133A05AA78876 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E252B8A72E4B90B00B74765A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LetsGetBlown/Pods-LetsGetBlown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B0579F1F1E7AEA0E00DF824A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -298,6 +488,7 @@
 				B0FB8F671E80175B00C80827 /* Attractor.swift in Sources */,
 				B0FB8F691E8023AE00C80827 /* AudioDetector.swift in Sources */,
 				B0579F271E7AEA0E00DF824A /* AppDelegate.swift in Sources */,
+				B000CA5A1E81816F00B4A16F /* RoundedGreenButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +638,7 @@
 		};
 		B0579F4C1E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13DC0CA6A9D9857C6D251A35 /* Pods-LetsGetBlown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 37VBV43PK2;
@@ -455,11 +647,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismac.LetsGetBlown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B0579F4D1E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B36470B3EC76D8A4EC8E8FC1 /* Pods-LetsGetBlown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 37VBV43PK2;
@@ -468,11 +662,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.louismac.LetsGetBlown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		B0579F4F1E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E710F77704378624BADC920 /* Pods-LetsGetBlownTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +683,7 @@
 		};
 		B0579F501E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31AD8430ACA5DF0E70D671E8 /* Pods-LetsGetBlownTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -501,6 +698,7 @@
 		};
 		B0579F521E7AEA0E00DF824A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D3F2FF8B9DB2A4C9B81AAD0 /* Pods-LetsGetBlownUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LetsGetBlownUITests/Info.plist;
@@ -514,6 +712,7 @@
 		};
 		B0579F531E7AEA0E00DF824A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A09ECACA68AB5B39BA2E66B7 /* Pods-LetsGetBlownUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = LetsGetBlownUITests/Info.plist;

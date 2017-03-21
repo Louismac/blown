@@ -26,24 +26,25 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QML-wb-N3J">
-                                <rect key="frame" x="38" y="30" width="67" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6hg-72-tTK"/>
-                                    <constraint firstAttribute="width" constant="67" id="ZLG-eZ-tIG"/>
-                                </constraints>
-                                <state key="normal" title="Mode"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QML-wb-N3J" customClass="RoundedGreenButton" customModule="LetsGetBlown" customModuleProvider="target">
+                                <rect key="frame" x="38" y="30" width="130" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Pixels">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="modeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfL-1g-cI9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-ou-DvE">
-                                <rect key="frame" x="249" y="30" width="88" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dps-ou-DvE" customClass="RoundedGreenButton" customModule="LetsGetBlown" customModuleProvider="target">
+                                <rect key="frame" x="207" y="30" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S5Z-ri-yXG"/>
-                                    <constraint firstAttribute="width" constant="88" id="Tn5-Hh-Ggq"/>
+                                    <constraint firstAttribute="width" constant="130" id="Tn5-Hh-Ggq"/>
                                 </constraints>
-                                <state key="normal" title="Select Photo"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="loadImageButtonPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znR-Dv-Ai2"/>
                                 </connections>
@@ -52,6 +53,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="top" secondItem="QML-wb-N3J" secondAttribute="bottom" constant="8" id="9zT-sY-g4K"/>
+                            <constraint firstItem="Dps-ou-DvE" firstAttribute="width" secondItem="QML-wb-N3J" secondAttribute="width" id="DiS-an-M79"/>
+                            <constraint firstItem="Dps-ou-DvE" firstAttribute="height" secondItem="QML-wb-N3J" secondAttribute="height" id="GtN-vJ-VJj"/>
                             <constraint firstAttribute="trailing" secondItem="xUB-Tj-yAQ" secondAttribute="trailing" id="K53-m8-0LT"/>
                             <constraint firstItem="xUB-Tj-yAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZD9-cu-mcP"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="jT5-uT-DyB"/>
@@ -62,7 +65,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="modeButton" destination="QML-wb-N3J" id="cs2-Ac-25i"/>
                         <outlet property="pinView" destination="xUB-Tj-yAQ" id="87g-YY-THy"/>
+                        <outlet property="selectPhotoButton" destination="Dps-ou-DvE" id="Nmu-54-wW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
