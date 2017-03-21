@@ -162,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				B0579F251E7AEA0E00DF824A /* Blown */,
-				B0579F3A1E7AEA0E00DF824A /* LetsGetBlownTests */,
-				B0579F451E7AEA0E00DF824A /* LetsGetBlownUITests */,
+				B0579F3A1E7AEA0E00DF824A /* BlownTests */,
+				B0579F451E7AEA0E00DF824A /* BlownUITests */,
 				B0579F241E7AEA0E00DF824A /* Products */,
 				7C14BFCA32F5A347CAA3A5AE /* Pods */,
 				77BBBEE52ECF12174F03DB2B /* Frameworks */,
@@ -195,21 +195,23 @@
 			path = LetsGetBlown;
 			sourceTree = "<group>";
 		};
-		B0579F3A1E7AEA0E00DF824A /* LetsGetBlownTests */ = {
+		B0579F3A1E7AEA0E00DF824A /* BlownTests */ = {
 			isa = PBXGroup;
 			children = (
 				B0579F3B1E7AEA0E00DF824A /* LetsGetBlownTests.swift */,
 				B0579F3D1E7AEA0E00DF824A /* Info.plist */,
 			);
+			name = BlownTests;
 			path = LetsGetBlownTests;
 			sourceTree = "<group>";
 		};
-		B0579F451E7AEA0E00DF824A /* LetsGetBlownUITests */ = {
+		B0579F451E7AEA0E00DF824A /* BlownUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B0579F461E7AEA0E00DF824A /* LetsGetBlownUITests.swift */,
 				B0579F481E7AEA0E00DF824A /* Info.plist */,
 			);
+			name = BlownUITests;
 			path = LetsGetBlownUITests;
 			sourceTree = "<group>";
 		};
