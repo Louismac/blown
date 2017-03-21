@@ -152,9 +152,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             modeButton.setEnabled(enabled: false);
             modeButton.spinner.isHidden = true;
             
-            instructionLabel.backgroundColor = blownGreen;
+            //instructionLabel.backgroundColor = blownGreen;
 
             newPhotoSelected();
+            
             instructionLabel.isHidden = true;
             pinView.layer.borderWidth = 0.0;
             
@@ -181,9 +182,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pinsComplete = false;
         modeButton.setEnabled(enabled: false);
         instructionLabel.isHidden = false;
-        pinView.layer.borderColor = blownGreen.cgColor;
-        pinView.layer.borderWidth = 5.0;
-        pinView.layer.cornerRadius = 10;
+//        pinView.layer.borderColor = blownGreen.cgColor;
+//        pinView.layer.borderWidth = 5.0;
+//        pinView.layer.cornerRadius = 10;
         
         showProcessingSpinner();
         
@@ -249,9 +250,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 pv.pixels = pixels;
                 
                 if(!pixels) {
-                    pinViews[i][j].imV.image = pins[i][j].image;
+                    pv.imV.image = pins[i][j].image;
                 } else {
-                    pinViews[i][j].setNeedsDisplay();
+                    pv.setNeedsDisplay();
                 }
             }
         }

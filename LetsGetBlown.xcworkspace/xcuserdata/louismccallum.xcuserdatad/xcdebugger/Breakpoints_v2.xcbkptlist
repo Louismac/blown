@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LetsGetBlown/ViewController.swift"
-            timestampString = "511821036.637208"
+            timestampString = "511821433.718997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
+            startingLineNumber = "586"
+            endingLineNumber = "586"
             landmarkName = "propertiesFor(image:)"
             landmarkType = "7">
          </BreakpointContent>

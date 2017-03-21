@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUB-Tj-yAQ">
-                                <rect key="frame" x="0.0" y="68" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="538"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QML-wb-N3J" customClass="RoundedGreenButton" customModule="LetsGetBlown" customModuleProvider="target">
@@ -59,19 +59,21 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Rt-L8-6Ke" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8F1-zt-em5"/>
-                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="top" secondItem="QML-wb-N3J" secondAttribute="bottom" constant="8" id="9zT-sY-g4K"/>
+                            <constraint firstAttribute="bottom" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="65" id="BWL-qe-YgV"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="width" secondItem="QML-wb-N3J" secondAttribute="width" id="DiS-an-M79"/>
+                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fvz-cY-rJ5"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="height" secondItem="QML-wb-N3J" secondAttribute="height" id="GtN-vJ-VJj"/>
                             <constraint firstAttribute="trailing" secondItem="xUB-Tj-yAQ" secondAttribute="trailing" id="K53-m8-0LT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Rt-L8-6Ke" secondAttribute="bottom" constant="8" id="OMs-gE-clF"/>
                             <constraint firstAttribute="trailing" secondItem="5Rt-L8-6Ke" secondAttribute="trailing" constant="8" id="T59-BJ-dZ1"/>
-                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZD9-cu-mcP"/>
+                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TYr-fJ-Uha"/>
+                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bvj-uW-IBb"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="30" id="jT5-uT-DyB"/>
-                            <constraint firstItem="5Rt-L8-6Ke" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="8" id="nlx-L5-n2h"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5Rt-L8-6Ke" secondAttribute="bottom" constant="8" id="uJl-BM-8si"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="65" id="vNB-D5-AcG"/>
+                            <constraint firstItem="5Rt-L8-6Ke" firstAttribute="top" secondItem="xUB-Tj-yAQ" secondAttribute="bottom" constant="8" id="uNk-yL-5wJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dps-ou-DvE" secondAttribute="trailing" constant="22" id="vj6-z6-bFi"/>
                             <constraint firstItem="QML-wb-N3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="wfC-11-Tdb"/>
                             <constraint firstItem="Dps-ou-DvE" firstAttribute="centerY" secondItem="QML-wb-N3J" secondAttribute="centerY" id="wj7-yH-bzk"/>
+                            <constraint firstItem="xUB-Tj-yAQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="zOa-Fl-cKr"/>
                         </constraints>
                     </view>
                     <connections>
