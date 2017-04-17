@@ -32,7 +32,7 @@ class Pin {
             
             for _ in 0...h-1 {
                 
-                arr.append(UIColor.black);
+                arr.append(UIColor.clear);
                 
             }
             

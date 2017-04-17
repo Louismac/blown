@@ -35,6 +35,14 @@ extension UIImage {
             cgContext.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         }
     }
+    
+    convenience init(view: UIView) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage:(image?.cgImage)!)
+    }
 }
 
 //MARK: - Main Class
@@ -176,6 +184,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         queue.async {
             
+            //Place image on clear backing to remove black edges
+            let backingView = UIImageView(frame: self.pinView.frame);
+            backingView.backgroundColor = UIColor.clear;
+            backingView.image = self.image;
+            backingView.contentMode = UIViewContentMode.scaleAspectFit;
+            self.image = UIImage(view:backingView);
+            
             self.clear();
 
             self.setPins(fromImage: self.image!)
@@ -237,9 +252,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
                 if(!pixels) {
                     pv.imV.image = pins[i][j].image;
-                } else {
-                    pv.setNeedsDisplay();
                 }
+                pv.setNeedsDisplay();
             }
         }
     }
@@ -541,7 +555,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let r = CGFloat(pixelData[0]) / CGFloat(255.0);
         let g = CGFloat(pixelData[1]) / CGFloat(255.0);
         let b = CGFloat(pixelData[2]) / CGFloat(255.0);
-        let a = CGFloat(pixelData[3]) / CGFloat(255.0);
+        var a = CGFloat(pixelData[3]) / CGFloat(255.0);
+        
+        if r==0 && g==0 && b==0 {
+            a = 0;
+        }
         
         let pinX = Int(floor(Double(coordinate.x/CGFloat(withinPin))));
         let pinY = Int(floor(Double(coordinate.y/CGFloat(withinPin))));
